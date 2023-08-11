@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { useActions } from "../../hooks/actions";
+import { useTranslation } from 'react-i18next';
 
 interface NameCity {
   nameCity: string;
@@ -7,6 +8,8 @@ interface NameCity {
 
 const Cities: FC<NameCity> = ({ nameCity }) => {
   const { getStar } = useActions();
+
+  const { t } = useTranslation();
 
   const deleteStar = () => {
     getStar(["⭐", nameCity]);
@@ -21,7 +24,7 @@ const Cities: FC<NameCity> = ({ nameCity }) => {
             onClick={deleteStar}
             className="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
           >
-            Remove from favorites
+            {t("buttonDelete")}
           </button>
         </div>
       </div>

@@ -5,6 +5,8 @@ import { useAppSelector } from "../../hooks/redux";
 
 import CardCityHelper from "./CardCityHelper";
 
+import { useTranslation } from "react-i18next";
+
 interface CardInputProps {
   fetchRepos: Function;
 }
@@ -13,6 +15,8 @@ const CardInput: FC<CardInputProps> = ({ fetchRepos }) => {
   const { city, cities } = useAppSelector((state) => state.weather);
   const { langue } = useAppSelector((state) => state.langue);
   const { getCity, cleanCity } = useActions();
+
+  const { t } = useTranslation();
 
   const getInCity = (e: React.ChangeEvent<HTMLInputElement>) => {
     getCity(e.target.value);
@@ -30,7 +34,7 @@ const CardInput: FC<CardInputProps> = ({ fetchRepos }) => {
 
   return (
     <div className="mb-4 flex flex-wrap justify-center items-center align-middle">
-      <label className="font-semibold text-2xl p-2"> Enter city:</label>
+      <label className="font-semibold text-2xl p-2"> {t("EnterCity")}</label>
       <div className="relative flex flex-wrap justify-center items-center align-middle">
         <input
           value={city}
@@ -38,7 +42,7 @@ const CardInput: FC<CardInputProps> = ({ fetchRepos }) => {
           type="text"
           autoComplete="off"
           className="ml-3 mr-5 w-40 border px-2 py-1 mt-1 bg-gray-200 border-gray-300 focus:border-blue-500 rounded-lg p-2"
-          placeholder="Enter city..."
+          placeholder={t("InputEnterCity")}
         />
         {city && filteredData.length > 0 && (
           <div className="absolute z-10 border w-44 mt-2 bg-white border-gray-300 rounded-md shadow-lg top-9 left-1">
@@ -52,7 +56,7 @@ const CardInput: FC<CardInputProps> = ({ fetchRepos }) => {
             onClick={() => clickHandler(city)}
             className="mt-2 py-2 bg-blue-500 align-middle p-10 text-white rounded-full hover:bg-blue-600 "
           >
-            Send
+            {t("buttonSend")}
           </button>
         </div>
       </div>

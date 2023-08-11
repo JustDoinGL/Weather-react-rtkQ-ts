@@ -1,0 +1,16 @@
+{
+  "buttonSend": "Send",
+  "text": "Enter the name of the city",
+  "EnterCity": "Enter city:",
+  "InputEnterCity": "Enter city...",
+  "HomePage": "HomePage",
+  "FavoritesCities": "FavoritesCities",
+  "WEATHER": "WEATHER",
+  "Humidity": "Humidity:",
+  "Wind": "Wind:",
+  "Sunrise": "Sunrise:",
+  "Sunset": "Sunset:",
+  "buttonDelete": "Delete",
+  "Cities": "Cities",
+  "WrongCityName": "Wrong city name"
+}

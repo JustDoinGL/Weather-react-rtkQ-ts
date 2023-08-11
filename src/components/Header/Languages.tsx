@@ -1,12 +1,15 @@
 import { useActions } from "../../hooks/actions";
 import { useAppSelector } from "../../hooks/redux";
+import { useTranslation } from 'react-i18next';
 
 const Languages = () => {
   const { langue } = useAppSelector((state) => state.langue);
   const { getLangue } = useActions();
+  const {i18n} = useTranslation();
 
   const clickHandler = () => {
-    getLangue();
+    getLangue(langue);
+    i18n.changeLanguage(langue)
   };
 
   return (

@@ -1,7 +1,11 @@
+import { useTranslation } from "react-i18next";
+
 const NoName = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="max-w-sm mx-auto bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 rounded-lg shadow-lg overflow-hidden text-center">
-      <p className="text-gray-600 text-2xl">Enter the name of the city</p>
+      <p className="text-gray-600 text-2xl"> {t("text")}</p>
     </div>
   );
 };

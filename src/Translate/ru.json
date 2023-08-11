@@ -1,0 +1,16 @@
+{
+    "buttonSend": "Найти",
+    "text": "Введите название города",
+    "EnterCity": "Введите город:",
+    "InputEnterCity": "Введите город...",
+    "HomePage": "ДомашняяСтраница",
+    "FavoritesCities": "ИзбранныеГорода",
+    "WEATHER": "ПОГОДА",
+    "Humidity": "Влажность:",
+    "Wind": "Ветер:",
+    "Sunrise": "Восход:",
+    "Sunset": "Закат:",
+    "buttonDelete": "Удалить",
+    "Cities": "Города",
+    "WrongCityName": "Неверное название города"
+  }
