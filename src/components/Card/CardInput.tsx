@@ -11,14 +11,16 @@ interface CardInputProps {
 
 const CardInput: FC<CardInputProps> = ({ fetchRepos }) => {
   const { city, cities } = useAppSelector((state) => state.weather);
+  const { langue } = useAppSelector((state) => state.langue);
   const { getCity, cleanCity } = useActions();
 
   const getInCity = (e: React.ChangeEvent<HTMLInputElement>) => {
     getCity(e.target.value);
   };
 
+  console.log(langue)
   const clickHandler = (city: string) => {
-    fetchRepos(city);
+    fetchRepos([city, langue]);
     cleanCity();
   };
 
@@ -41,7 +43,7 @@ const CardInput: FC<CardInputProps> = ({ fetchRepos }) => {
         {city && filteredData.length > 0 && (
           <div className="absolute z-10 border w-44 mt-2 bg-white border-gray-300 rounded-md shadow-lg top-9 left-1">
             {filteredData.map((e, index) => (
-              <CardCityHelper city={e} key={index} fetchRepos={fetchRepos}  />
+              <CardCityHelper city={e} key={index} fetchRepos={fetchRepos} />
             ))}
           </div>
         )}

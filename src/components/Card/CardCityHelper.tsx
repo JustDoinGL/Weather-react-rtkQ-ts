@@ -1,6 +1,7 @@
 import { FC } from "react";
 
 import { useActions } from "../../hooks/actions";
+import { useAppSelector } from "../../hooks/redux";
 
 interface InputCardCityName {
   city: string;
@@ -9,10 +10,11 @@ interface InputCardCityName {
 
 const CardCityHelper: FC<InputCardCityName> = ({ city, fetchRepos }) => {
   const { getCity, cleanCity } = useActions();
+  const { langue } = useAppSelector((state) => state.langue);
 
   const getCityName = () => {
     getCity(city);
-    fetchRepos(city);
+    fetchRepos([city, langue]);
     cleanCity();
   };
 

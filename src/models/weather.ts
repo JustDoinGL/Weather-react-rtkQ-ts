@@ -12,21 +12,21 @@ export interface Root {
     id: number
     name: string
     cod: number
-}
-
-export interface Coord {
+  }
+  
+  export interface Coord {
     lon: number
     lat: number
-}
-
-export interface Weather {
+  }
+  
+  export interface Weather {
     id: number
     main: string
     description: string
     icon: string
-}
-
-export interface Main {
+  }
+  
+  export interface Main {
     temp: number
     feels_like: number
     temp_min: number
@@ -35,22 +35,21 @@ export interface Main {
     humidity: number
     sea_level: number
     grnd_level: number
-}
-
-export interface Wind {
+  }
+  
+  export interface Wind {
     speed: number
     deg: number
     gust: number
-}
-
-export interface Clouds {
+  }
+  
+  export interface Clouds {
     all: number
-}
-
-export interface Sys {
-    type: number
-    id: number
+  }
+  
+  export interface Sys {
     country: string
     sunrise: number
     sunset: number
-}
+  }
+  

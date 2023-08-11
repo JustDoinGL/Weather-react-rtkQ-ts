@@ -8,7 +8,7 @@ interface WeatherState {
   city: string,
   star: string,
   cities: string[],
-}
+ }
 
 const getCityFromLocalStorage = (): string => {
   const city = localStorage.getItem(LS_CITY_KEY)
@@ -59,6 +59,9 @@ export const weatherSlice = createSlice({
         localStorage.setItem(ARR_CITY_KEY, JSON.stringify(store.cities))
       }
     },
+    getLangue: (store) => {
+
+    }
   }
 })
 

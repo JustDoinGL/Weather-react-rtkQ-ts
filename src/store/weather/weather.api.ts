@@ -11,9 +11,9 @@ export const weatherApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: url }),
   refetchOnFocus: true,
   endpoints: (builder) => ({
-    getWeather: builder.query<Root, string>({
-      query: (city: string) => ({
-        url: `/weather?q=${city},&APPID=${key}&units=metric`,
+    getWeather: builder.query<Root, string[]>({
+      query: (info) => ({
+        url: `/weather?q=${info[0]}&APPID=${key}&units=metric&lang=${info[1]}`
       }),
     }),
   }),
