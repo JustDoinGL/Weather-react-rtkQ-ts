@@ -12,9 +12,9 @@ interface CardInputProps {
 }
 
 const CardInput: FC<CardInputProps> = ({ fetchRepos }) => {
-  const { city, cities } = useAppSelector((state) => state.weather);
+  const { city, cities, search } = useAppSelector((state) => state.weather);
   const { langue } = useAppSelector((state) => state.langue);
-  const { getCity, cleanCity } = useActions();
+  const { getCity, cleanCity, openHelper } = useActions();
 
   const { t } = useTranslation();
 
@@ -22,10 +22,13 @@ const CardInput: FC<CardInputProps> = ({ fetchRepos }) => {
     getCity(e.target.value);
   };
 
-  console.log(langue)
   const clickHandler = (city: string) => {
     fetchRepos([city, langue]);
     cleanCity();
+  };
+
+  const searchInput = () => {
+    openHelper();
   };
 
   const filteredData = cities.filter((item) =>
@@ -39,14 +42,15 @@ const CardInput: FC<CardInputProps> = ({ fetchRepos }) => {
         <input
           value={city}
           onChange={getInCity}
+          onFocus={searchInput}
           type="text"
           autoComplete="off"
           className="ml-3 mr-5 w-40 border px-2 py-1 mt-1 bg-gray-200 border-gray-300 focus:border-blue-500 rounded-lg p-2"
           placeholder={t("InputEnterCity")}
         />
-        {city && filteredData.length > 0 && (
+        {search && filteredData.length > 0 && (
           <div className="absolute z-10 border w-44 mt-2 bg-white border-gray-300 rounded-md shadow-lg top-9 left-1">
-            {filteredData.map((e, index) => (
+            {filteredData?.map((e, index) => (
               <CardCityHelper city={e} key={index} fetchRepos={fetchRepos} />
             ))}
           </div>

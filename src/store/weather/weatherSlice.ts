@@ -8,7 +8,8 @@ interface WeatherState {
   city: string,
   star: string,
   cities: string[],
- }
+  search: boolean
+}
 
 const getCityFromLocalStorage = (): string => {
   const city = localStorage.getItem(LS_CITY_KEY)
@@ -31,7 +32,8 @@ const getCitiesFromLocalStorage = (): string[] => {
 const initialState: WeatherState = {
   city: getCityFromLocalStorage(),
   star: '✩',
-  cities: getCitiesFromLocalStorage()
+  cities: getCitiesFromLocalStorage(),
+  search: false
 }
 
 
@@ -39,13 +41,14 @@ export const weatherSlice = createSlice({
   name: 'weather',
   initialState,
   reducers: {
-    getCity: (state, action: PayloadAction<string>) => {
-      state.city = action.payload
-      localStorage.setItem(LS_CITY_KEY, JSON.stringify(state.city))
+    getCity: (store, action: PayloadAction<string>) => {
+      store.city = action.payload
+      localStorage.setItem(LS_CITY_KEY, JSON.stringify(store.city))
     },
     cleanCity: (store) => {
       store.city = ''
       localStorage.setItem(LS_CITY_KEY, JSON.stringify(''))
+      store.search = false
     },
     getStar: (store, action: PayloadAction<string[]>) => {
       if ('✩' === action.payload[0]) {
@@ -59,9 +62,9 @@ export const weatherSlice = createSlice({
         localStorage.setItem(ARR_CITY_KEY, JSON.stringify(store.cities))
       }
     },
-    getLangue: (store) => {
-
-    }
+    openHelper: (store) => {
+      store.search = true
+    },
   }
 })
 
