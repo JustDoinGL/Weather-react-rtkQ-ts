@@ -4,7 +4,7 @@ import { key } from './../../API/const';
 
 import { Root } from '../../models/weather';
 
-const url: string = `http://api.openweathermap.org/data/2.5/`
+const url: string = `https://api.openweathermap.org/data/2.5/`
 
 export const weatherApi = createApi({
   reducerPath: 'weatherApi',
