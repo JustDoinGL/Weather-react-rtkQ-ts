@@ -1,6 +1,7 @@
-import { useActions } from "../../hooks/actions";
-import { useAppSelector } from "../../hooks/redux";
+
 import { useTranslation } from 'react-i18next';
+import { useActions } from '../hooks/actions';
+import { useAppSelector } from '../hooks/redux';
 
 const Languages = () => {
   const { langue } = useAppSelector((state) => state.langue);

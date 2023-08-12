@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import Languages from "./Header/Languages";
+import Languages from "../UI/Languages";
 
 import { useTranslation } from "react-i18next";
 
@@ -19,7 +19,7 @@ const Header = () => {
           {t("FavoritesCities")}
         </Link>
       </div>
-        <Languages />
+      <Languages />
     </div>
   );
 };
