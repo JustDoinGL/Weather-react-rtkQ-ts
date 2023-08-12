@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-const NoName = () => {
+const WrongNameCity = () => {
   const { t } = useTranslation();
   
   return (
@@ -10,4 +10,4 @@ const NoName = () => {
   );
 };
 
-export default NoName;
+export default WrongNameCity;

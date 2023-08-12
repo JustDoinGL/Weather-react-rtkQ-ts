@@ -6,7 +6,7 @@ interface LangueState {
 
 
 const initialState: LangueState = {
-    langue: 'en',
+    langue: 'ru',
 }
 
 

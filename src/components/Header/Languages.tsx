@@ -13,7 +13,7 @@ const Languages = () => {
   };
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="items-center  my-2">
       <button
         onClick={clickHandler}
         className="mr-2 py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:outline-none"

@@ -1,7 +1,14 @@
 import Card from "../components/Card";
 
 const Home = () => {
-  return <Card />;
+  
+  return (
+    <>
+   
+      <Card />
+      
+    </>
+  );
 };
 
 export default Home;
