@@ -2,7 +2,7 @@ import Temperature from "./Card/Temperature";
 import CardInput from "./Card/CardInput";
 import Loader from "../UI/Loader";
 import Error from "../UI/Error";
-import WrongNameCity from "../UI/WrongNameCity";
+import WrongNameCity from "../UI/EnterNameCity";
 
 import { useLazyGetWeatherQuery } from "../store/weather/weather.api";
 

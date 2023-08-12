@@ -7,15 +7,17 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <>
+    <div className="h-screen relative">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/favorite" element={<FavoritesCities />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 };
 
 export default App;
+
+// TODO: https://tailwindcss.com/docs/dark-mode ? 
