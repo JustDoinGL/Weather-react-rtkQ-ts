@@ -49,7 +49,7 @@ const CardInput: FC<CardInputProps> = ({ fetchRepos }) => {
           placeholder={t("InputEnterCity")}
         />
         {search && filteredData.length > 0 && (
-          <div className="absolute z-10 border w-44 mt-2 bg-white border-gray-300 rounded-md shadow-lg top-9 left-1">
+          <div className="overflow-y-auto  max-h-24 absolute z-10 border w-44 mt-2 bg-white border-gray-300 rounded-md shadow-lg top-9 left-1">
             {filteredData?.map((e, index) => (
               <CardCityHelper city={e} key={index} fetchRepos={fetchRepos} />
             ))}
