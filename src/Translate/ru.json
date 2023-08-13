@@ -15,5 +15,6 @@
     "WrongCityName": "Неверное название города",
     "weatherDay": "Погода на день",
     "NotFound": "Страница не найдена",
-    "Temperature": "Температура"
+    "Temperature": "Температура",
+    "Time/Date": "Время/Дата"
   }

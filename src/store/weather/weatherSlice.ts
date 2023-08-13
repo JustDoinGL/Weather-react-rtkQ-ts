@@ -8,7 +8,8 @@ interface WeatherState {
   city: string,
   star: string,
   cities: string[],
-  search: boolean
+  search: boolean,
+  data: number,
 }
 
 const getCityFromLocalStorage = (): string => {
@@ -33,7 +34,8 @@ const initialState: WeatherState = {
   city: getCityFromLocalStorage(),
   star: '✩',
   cities: getCitiesFromLocalStorage(),
-  search: false
+  search: false,
+  data: 0
 }
 
 
@@ -65,6 +67,9 @@ export const weatherSlice = createSlice({
     openHelper: (store) => {
       store.search = true
     },
+    getDate: (store, action: PayloadAction<number>) => {
+      store.data = action.payload
+    }
   }
 })
 

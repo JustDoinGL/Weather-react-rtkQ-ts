@@ -28,7 +28,6 @@ const CardHeder: FC<IOCardHeder> = ({
   return (
     <div className="transition-opacity duration-700 flex justify-center">
       <div className="bg-yellow-300 w-96 mt-8 p-4 rounded-lg shadow-lg">
-        <div className="flex justify-center items-center h-96 max-w-sm mx-auto bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 rounded-lg shadow-lg overflow-hidden text-center">
           {isError ? (
             <Error message="Wrong city name" />
           ) : (
@@ -45,7 +44,6 @@ const CardHeder: FC<IOCardHeder> = ({
               )}
             </>
           )}
-        </div>
         <CardInput fetchRepos={fetchRepos} />
       </div>
     </div>

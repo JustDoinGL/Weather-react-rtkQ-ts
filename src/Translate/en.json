@@ -15,5 +15,6 @@
   "WrongCityName": "Wrong city name",
   "weatherDay": "Weather for the day",
   "NotFound": "Page not found",
-  "Temperature": "Temperature"
+  "Temperature": "Temperature",
+  "Time/Date": "Time/Date"
 }
