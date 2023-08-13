@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-const WrongNameCity = () => {
+const EnterNameCity = () => {
   const { t } = useTranslation();
   
   return (
@@ -10,4 +10,4 @@ const WrongNameCity = () => {
   );
 };
 
-export default WrongNameCity;
+export default EnterNameCity;

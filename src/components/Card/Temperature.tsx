@@ -1,24 +1,28 @@
 import { FC } from "react";
-import { Root } from "../../models/weather";
+import { Root, WeatherDays } from "../../models/weather";
 
 import TemperatureStar from "./TemperatureStar";
 
 import { useTranslation } from "react-i18next";
 
 interface TemperatureProps {
-  weather: Root;
+  weather?: Root;
+  weather2?: WeatherDays;
 }
 
-const Temperature: FC<TemperatureProps> = ({ weather }) => {
-  let sunset = new Date(weather.sys.sunset * 1000).toLocaleTimeString();
-  let sunrise = new Date(weather.sys.sunrise * 1000).toLocaleTimeString();
-  let url = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
+const Temperature: FC<TemperatureProps> = ({ weather, weather2 }) => {
+  // let sunset = new Date(weather.sys.sunset * 1000).toLocaleTimeString();
+  // let sunrise = new Date(weather.sys.sunrise * 1000).toLocaleTimeString();
+  // let url = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
+  // weather ? console.log("aaaa1a") : console.log("aaaaaaa");
 
   const { t } = useTranslation();
 
+  
   return (
     <div className="max-w-sm mx-auto bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 rounded-lg shadow-lg overflow-hidden">
-      <div className="px-6 py-4">
+      xx
+      {/* <div className="px-6 py-4">
         <div className="flex items-center justify-between">
           <p className="text-2xl font-bold text-gray-800 uppercase">
 
@@ -56,7 +60,7 @@ const Temperature: FC<TemperatureProps> = ({ weather }) => {
           <p className="text-gray-800">{t("Sunset")}</p>
           <p className="text-gray-800">{sunset}</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

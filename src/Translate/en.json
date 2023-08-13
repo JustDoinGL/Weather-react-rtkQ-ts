@@ -3,8 +3,8 @@
   "text": "Enter the name of the city",
   "EnterCity": "Enter city:",
   "InputEnterCity": "Enter city...",
-  "HomePage": "HomePage",
-  "FavoritesCities": "FavoritesCities",
+  "Weather": "Weather",
+  "FavoritesCities": "Favorites cities",
   "WEATHER": "WEATHER",
   "Humidity": "Humidity:",
   "Wind": "Wind:",
@@ -12,5 +12,8 @@
   "Sunset": "Sunset:",
   "buttonDelete": "Delete",
   "Cities": "Cities",
-  "WrongCityName": "Wrong city name"
+  "WrongCityName": "Wrong city name",
+  "weatherDay": "Weather for the day",
+  "NotFound": "Page not found",
+  "Temperature": "Temperature"
 }

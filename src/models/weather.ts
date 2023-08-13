@@ -52,4 +52,81 @@ export interface Root {
     sunrise: number
     sunset: number
   }
+
+  // __________________________________________________________
+
+  export interface WeatherDays {
+    cod: string
+    message: number
+    cnt: number
+    list: List[]
+    city: City2
+  }
+  
+  export interface List {
+    dt: number
+    main: Main2
+    weather: Weatherq[]
+    clouds: Clouds2
+    wind: Wind2
+    visibility: number
+    pop: number
+    rain?: Rain2
+    sys: Sys
+    dt_txt: string
+  }
+  
+  export interface Main2 {
+    temp: number
+    feels_like: number
+    temp_min: number
+    temp_max: number
+    pressure: number
+    sea_level: number
+    grnd_level: number
+    humidity: number
+    temp_kf: number
+  }
+  
+  export interface Weatherq {
+    id: number
+    main: string
+    description: string
+    icon: string
+  }
+  
+  export interface Clouds2 {
+    all: number
+  }
+  
+  export interface Wind2 {
+    speed: number
+    deg: number
+    gust: number
+  }
+  
+  export interface Rain2 {
+    "3h": number
+  }
+  
+  export interface Sys2 {
+    pod: string
+  }
+  
+  export interface City2 {
+    id: number
+    name: string
+    coord: Coord
+    country: string
+    population: number
+    timezone: number
+    sunrise: number
+    sunset: number
+  }
+  
+  export interface Coord2 {
+    lat: number
+    lon: number
+  }
+  
   

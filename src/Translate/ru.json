@@ -3,8 +3,8 @@
     "text": "Введите название города",
     "EnterCity": "Введите город:",
     "InputEnterCity": "Введите город...",
-    "HomePage": "ДомашняяСтраница",
-    "FavoritesCities": "ИзбранныеГорода",
+    "Weather": "Погода",
+    "FavoritesCities": "Избранные города",
     "WEATHER": "ПОГОДА",
     "Humidity": "Влажность:",
     "Wind": "Ветер:",
@@ -12,5 +12,8 @@
     "Sunset": "Закат:",
     "buttonDelete": "Удалить",
     "Cities": "Города",
-    "WrongCityName": "Неверное название города"
+    "WrongCityName": "Неверное название города",
+    "weatherDay": "Погода на день",
+    "NotFound": "Страница не найдена",
+    "Temperature": "Температура"
   }

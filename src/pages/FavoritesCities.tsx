@@ -10,7 +10,7 @@ const FavoritesCities = () => {
   return (
     <div className="justify-center items-center mt-12">
       <p className="text-center text-6xl font-bold tracking-wider capitalize transform rotate-3 origin-center mb-8">
-      {t("Cities")}
+        {t("Cities")}
       </p>
       <div className="flex items-center justify-center flex-wrap">
         {cities?.map((nameCity, index) => (

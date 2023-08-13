@@ -1,25 +1,43 @@
-import Temperature from "./Card/Temperature";
-import CardInput from "./Card/CardInput";
-import Loader from "../UI/Loader";
-import Error from "../UI/Error";
-import WrongNameCity from "../UI/EnterNameCity";
+import { FC } from "react";
+import CardHeder from "./Card/CardHeder";
+import {
+  useLazyGetWeatherDaysQuery,
+  useLazyGetWeatherQuery,
+} from "../store/weather/weather.api";
 
-import { useLazyGetWeatherQuery } from "../store/weather/weather.api";
+interface IOCard {
+  info: boolean;
+}
 
-const Card = () => {
+const Card: FC<IOCard> = ({ info }) => {
   const [fetchRepos, { data: weather, isLoading, isError }] =
     useLazyGetWeatherQuery();
 
+  const [
+    fetch,
+    { data: weather12, isLoading: isLoading12, isError: isError12 },
+  ] = useLazyGetWeatherDaysQuery();
+
   return (
-    <div className="transition-opacity duration-700 flex justify-center">
-      <div className="bg-yellow-300 w-96 mt-8 p-4 rounded-lg shadow-lg">
-        {(isError && <Error message="Wrong city name" />) ||
-          (isLoading && <Loader />) ||
-          (weather && <Temperature weather={weather} />)}
-        {!(isLoading || weather || isError) && <WrongNameCity />}
-        <CardInput fetchRepos={fetchRepos} />
-      </div>
-    </div>
+    <>
+      {info ? (
+        <CardHeder
+          fetchRepos={fetchRepos}
+          weather={weather}
+          isError={isError}
+          isLoading={isLoading}
+          info={info}
+        />
+      ) : (
+        <CardHeder
+          fetchRepos={fetch}
+          weather2={weather12}
+          isError={isError12}
+          isLoading={isLoading12}
+          info={info}
+        />
+      )}
+    </>
   );
 };
 
