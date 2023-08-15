@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import {NavLink  } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   const { t } = useTranslation();
@@ -29,7 +29,19 @@ const Navigation = () => {
             : "text-white text-center m-4 hover:text-gray-400"
         }
       >
-         {t("weatherDay")}
+        {t("weatherDay")}
+      </NavLink>
+      <NavLink
+        to="/weatherFiveDays"
+        className={({ isActive, isPending }) =>
+          isPending
+            ? "pending"
+            : isActive
+            ? "text-yellow-300 text-center m-4 border-b-4"
+            : "text-white text-center m-4 hover:text-gray-400"
+        }
+      >
+        {t("WeatherFiveDays")}
       </NavLink>
       <NavLink
         to="/favorite"
@@ -41,9 +53,8 @@ const Navigation = () => {
             : "text-white text-center m-4 hover:text-gray-400"
         }
       >
-         {t("FavoritesCities")}
+        {t("FavoritesCities")}
       </NavLink>
-      
     </div>
   );
 };

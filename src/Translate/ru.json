@@ -16,5 +16,6 @@
     "weatherDay": "Погода на день",
     "NotFound": "Страница не найдена",
     "Temperature": "Температура",
-    "Time/Date": "Время/Дата"
+    "Time/Date": "Время/Дата",
+    "WeatherFiveDays": "Погода на 5 дней"
   }

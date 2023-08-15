@@ -2,20 +2,25 @@ import { FC } from "react";
 
 import { useActions } from "../../hooks/actions";
 import { useAppSelector } from "../../hooks/redux";
+import { Weather5Days } from "../../models/weather";
 
 interface InputCardCityName {
   city: string;
   fetchRepos: Function;
+  weather5?: Weather5Days;
 }
 
-const CardCityHelper: FC<InputCardCityName> = ({ city, fetchRepos }) => {
-  const { getCity, cleanCity } = useActions();
+const CardCityHelper: FC<InputCardCityName> = ({ city, fetchRepos, weather5 }) => {
+  const { getCity, cleanCity, getValue } = useActions();
   const { langue } = useAppSelector((state) => state.langue);
 
   const getCityName = () => {
     getCity(city);
     fetchRepos([city, langue]);
     cleanCity();
+    if (weather5 !== undefined) {
+      getValue(weather5);
+    }
   };
 
   return (

@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import NotFound from "./UI/NotFound";
 import WeatherDay from "./pages/WeatherDay";
+import WeatherFiveDays from "./pages/WeatherFiveDays";
 
 const App = () => {
   return (
@@ -13,8 +14,9 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/favorite" element={<FavoritesCities />} />
         <Route path="/weatherDay" element={<WeatherDay />} />
+        <Route path="/favorite" element={<FavoritesCities />} />
+        <Route path="/weatherFiveDays" element={<WeatherFiveDays />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />

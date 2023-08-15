@@ -3,7 +3,7 @@ import Card from '../components/Card'
 const WeatherDay = () => {
   return (
     <>
-        <Card info={false}/>
+        <Card info="WeatherDay"/>
     </>
   )
 }

@@ -3,7 +3,7 @@ import Card from "../components/Card";
 const Home = () => {
   return (
     <>
-      <Card info={true} />
+      <Card info={"Weather"} />
     </>
   );
 };

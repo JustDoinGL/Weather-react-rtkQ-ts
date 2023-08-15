@@ -16,5 +16,6 @@
   "weatherDay": "Weather for the day",
   "NotFound": "Page not found",
   "Temperature": "Temperature",
-  "Time/Date": "Time/Date"
+  "Time/Date": "Time/Date",
+  "WeatherFiveDays": "Weather Five Days"
 }

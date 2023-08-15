@@ -6,15 +6,17 @@ import { useAppSelector } from "../../hooks/redux";
 import CardCityHelper from "./CardCityHelper";
 
 import { useTranslation } from "react-i18next";
+import { Weather5Days } from "../../models/weather";
 
 interface CardInputProps {
   fetchRepos: Function;
+  weather5? : Weather5Days
 }
 
-const CardInput: FC<CardInputProps> = ({ fetchRepos }) => {
+const CardInput: FC<CardInputProps> = ({ fetchRepos, weather5 }) => {
   const { city, cities, search } = useAppSelector((state) => state.weather);
   const { langue } = useAppSelector((state) => state.langue);
-  const { getCity, cleanCity, openHelper } = useActions();
+  const { getCity, cleanCity, openHelper, getValue } = useActions();
 
   const { t } = useTranslation();
 
@@ -25,6 +27,9 @@ const CardInput: FC<CardInputProps> = ({ fetchRepos }) => {
   const clickHandler = (city: string) => {
     fetchRepos([city, langue]);
     cleanCity();
+    if (weather5) {
+      getValue(weather5);
+    }
   };
 
   const searchInput = () => {
@@ -51,7 +56,7 @@ const CardInput: FC<CardInputProps> = ({ fetchRepos }) => {
         {search && filteredData.length > 0 && (
           <div className="overflow-y-auto  max-h-24 absolute z-10 border w-44 mt-2 bg-white border-gray-300 rounded-md shadow-lg top-9 left-1">
             {filteredData?.map((e, index) => (
-              <CardCityHelper city={e} key={index} fetchRepos={fetchRepos} />
+              <CardCityHelper city={e} key={index} fetchRepos={fetchRepos} weather5={weather5}/>
             ))}
           </div>
         )}
