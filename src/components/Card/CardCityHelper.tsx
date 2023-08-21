@@ -18,7 +18,7 @@ const CardCityHelper: FC<InputCardCityName> = ({ city, fetchRepos, weather5 }) =
     getCity(city);
     fetchRepos([city, langue]);
     cleanCity();
-    if (weather5 !== undefined) {
+    if (weather5) {
       getValue(weather5);
     }
   };
